@@ -1,0 +1,10 @@
+# OneNote 文件（二进制格式，不适合版本控制）
+*.one
+*.onetoc2
+
+# OneNote 回收站
+OneNote_RecycleBin/
+
+# Windows 系统文件
+Thumbs.db
+Desktop.ini
