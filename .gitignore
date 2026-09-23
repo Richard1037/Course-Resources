@@ -1,9 +1,15 @@
-# OneNote 文件（二进制格式，不适合版本控制）
+﻿# OneNote 文件（二进制格式，不适合版本控制）
 *.one
 *.onetoc2
 
 # OneNote 回收站
 OneNote_RecycleBin/
+
+# 编辑器 / IDE 的本地配置
+.trae/
+.vscode/
+.idea/
+.obsidian/
 
 # Windows 系统文件
 Thumbs.db
