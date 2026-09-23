@@ -31,8 +31,9 @@
 
 - 目录一律小写，用连字符分隔：`linear-algebra` 而不是 `liner algebra`
 - 课程名用官方英文名
+- 文件名统一为 `<课程>-<章节>-<类型>.pdf`，例如 `la-04-slide.pdf`、`am-04-note.pdf`
+  （`la` = Linear Algebra，`am` = Advanced Mathematics；类型用 `slide` / `note` / `assignment`）
 - 文件名不用中文、不用空格，避免在命令行和 URL 里出问题
-- 章节目录用两位数字：`01`、`02` …… 便于排序
 
 ## 说明
 
