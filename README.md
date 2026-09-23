@@ -10,7 +10,7 @@
 | `linear-algebra/` | 线性代数 |
 | `programming/` | 程序设计 |
 | `english/` | 英语 |
-<!-- 习概目录待定英文名，定下来后在这里补一行 -->
+| `xi-introduction/` | 习概（暂未整理） |
 
 ## 想补充资料？
 
