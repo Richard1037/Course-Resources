@@ -14,3 +14,11 @@ OneNote_RecycleBin/
 # Windows 系统文件
 Thumbs.db
 Desktop.ini
+
+# Python 依赖缓存（pip 安装产物，不入库）
+.pylibs/
+__pycache__/
+*.pyc
+
+# 个人展示资料，不入库
+xi-introduction/

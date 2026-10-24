@@ -1,0 +1,330 @@
+PASS ex1 rank=3
+PASS ex1 2A-I
+FAIL ex1 det nonzero
+   got : 26
+   want: -30
+PASS ex2 A2
+PASS ex2 A3
+PASS ex2 A4
+PASS ex2 A4=2^4 I
+PASS ex3 B2
+PASS ex3 B3
+PASS ex3 B4
+PASS ex3 N2
+PASS ex3 N3
+PASS ex3 N4=0
+PASS ex4 direct AB
+PASS ex4 block BL
+PASS ex4 block BR
+PASS ex4 block==direct
+PASS ex4 block flatten == direct
+PASS ex5 LDU
+PASS ex5 L^-1
+PASS ex5 D^-1
+PASS ex5 U^-1
+PASS ex5 A^-1 formula
+PASS ex5 A^-1 value
+NOTE ex6 RREF = [['1', '0', '0', '2'], ['0', '1', '0', '1'], ['0', '0', '1', '0'], ['0', '0', '0', '0']] pivots=[0, 1, 2]
+PASS ex6 rank
+PASS ex6 pivots
+FAIL ex6 R6
+   got : [['1', '0', '0', '2'], ['0', '1', '0', '1'], ['0', '0', '1', '0'], ['0', '0', '0', '0']]
+   want: [['1', '0', '0', '1'], ['0', '1', '0', '1'], ['0', '0', '1', '1'], ['0', '0', '0', '0']]
+FAIL ex6 col3 = 1a1+1a2
+   got : [Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]
+   want: [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]
+FAIL ex6 col4 = 1a1+1a2+1a3
+   got : [Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1), Fraction(-3, 1)]
+   want: [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]
+PASS ex6 C(A) rank
+PASS ex6 minor nonzero
+FAIL ex6 N(A) basis
+   got : [['-1'], ['-1'], ['-1'], ['-3']]
+   want: [['0'], ['0'], ['0'], ['0']]
+PASS ex6 dim N
+FAIL ex6 consistency screen
+   got : False
+   want: True
+FAIL ex6 b=(1,2,3,4) inconsistent
+   got : False
+   want: True
+PASS ex6 b=(1,1,2,-1) consistent
+PASS ex6 particular b=[0, 0, 0, 0]
+PASS ex6 general t=0 b=[0, 0, 0, 0]
+FAIL ex6 general t=1 b=[0, 0, 0, 0]
+   got : [['-1'], ['-1'], ['-1'], ['-3']]
+   want: [['0'], ['0'], ['0'], ['0']]
+FAIL ex6 general t=-3 b=[0, 0, 0, 0]
+   got : [['3'], ['3'], ['3'], ['9']]
+   want: [['0'], ['0'], ['0'], ['0']]
+FAIL ex6 general t=5/2 b=[0, 0, 0, 0]
+   got : [['-5/2'], ['-5/2'], ['-5/2'], ['-15/2']]
+   want: [['0'], ['0'], ['0'], ['0']]
+FAIL ex6 particular b=[1, 1, 2, -1]
+   got : [['4'], ['5'], ['7'], ['5']]
+   want: [['1'], ['1'], ['2'], ['-1']]
+FAIL ex6 general t=0 b=[1, 1, 2, -1]
+   got : [['4'], ['5'], ['7'], ['5']]
+   want: [['1'], ['1'], ['2'], ['-1']]
+FAIL ex6 general t=1 b=[1, 1, 2, -1]
+   got : [['3'], ['4'], ['6'], ['2']]
+   want: [['1'], ['1'], ['2'], ['-1']]
+FAIL ex6 general t=-3 b=[1, 1, 2, -1]
+   got : [['7'], ['8'], ['10'], ['14']]
+   want: [['1'], ['1'], ['2'], ['-1']]
+FAIL ex6 general t=5/2 b=[1, 1, 2, -1]
+   got : [['3/2'], ['5/2'], ['9/2'], ['-5/2']]
+   want: [['1'], ['1'], ['2'], ['-1']]
+FAIL ex6 particular b=[-8, 1, -7, 1]
+   got : [['4'], ['-31'], ['-56'], ['32']]
+   want: [['-8'], ['1'], ['-7'], ['1']]
+FAIL ex6 general t=0 b=[-8, 1, -7, 1]
+   got : [['4'], ['-31'], ['-56'], ['32']]
+   want: [['-8'], ['1'], ['-7'], ['1']]
+FAIL ex6 general t=1 b=[-8, 1, -7, 1]
+   got : [['3'], ['-32'], ['-57'], ['29']]
+   want: [['-8'], ['1'], ['-7'], ['1']]
+FAIL ex6 general t=-3 b=[-8, 1, -7, 1]
+   got : [['7'], ['-28'], ['-53'], ['41']]
+   want: [['-8'], ['1'], ['-7'], ['1']]
+FAIL ex6 general t=5/2 b=[-8, 1, -7, 1]
+   got : [['3/2'], ['-67/2'], ['-117/2'], ['49/2']]
+   want: [['-8'], ['1'], ['-7'], ['1']]
+PASS ex6 xp b=(1,1,2,-1)
+PASS ex7 rankA=2
+PASS ex7 rankB=2
+PASS ex7 AB
+PASS ex7 rankAB=2
+PASS ex7 uvT rank1
+PASS ex8 block inverse
+PASS ex8 I2-AB
+FAIL ex8 I2-AB inverse
+   got : [['-1', '0'], ['0', '-1']]
+   want: [['1', '0'], ['0', '1']]
+FAIL ex8 identity
+   got : [['5', '-36'], ['4', '-29']]
+   want: [['1', '0'], ['0', '1']]
+FAIL ex8 BA inverse identity
+   got : [['-3', '-2'], ['-6', '-5']]
+   want: [['1', '0'], ['0', '1']]
+NOTE ex8 explicit: I2-AB = [['-1', '-3'], ['-1', '-2']] ; (I2-AB)^-1 = [['-2', '3'], ['1', '-1']]
+NOTE ex10 RREF = [['1', '0', '2', '3'], ['0', '1', '0', '1'], ['0', '0', '0', '0'], ['0', '0', '0', '0']] pivots=[0, 1]
+PASS ex10 rank
+PASS ex10 v3=2v1
+PASS ex10 v4=3v1+v2
+PASS ex11 XY
+PASS ex11 YX
+PASS ex12 BC
+PASS ex12 CB
+PASS ex12 trBC
+PASS ex12 trCB
+PASS ex12 RtR symmetric
+PASS ex12 RRt symmetric
+PASS ex12 RtR
+PASS ex12 RRt
+PASS ex13 t13
+PASS ex13 U
+PASS ex13 y
+PASS ex13 y2
+PASS ex13 rank3
+PASS ex13 unique solution
+PASS ex13 residual x=(1,1,1)
+NOTE ex14 q=0 t=0 -> R=[['1', '0', '0', '-3/2'], ['0', '1', '0', '0'], ['0', '0', '1', '-5/4']] pivots=[0, 1, 2]
+NOTE ex14 q=-3 t=21 -> R=[['1', '0', '0', '-59'], ['0', '1', '0', '23'], ['0', '0', '1', '16']] pivots=[0, 1, 2]
+NOTE ex14 q=-3 t=0 -> R=[['1', '0', '0', '11'], ['0', '1', '0', '-5'], ['0', '0', '1', '-5']] pivots=[0, 1, 2]
+NOTE ex14 q=5 t=0 -> R=[['1', '0', '0', '-103/27'], ['0', '1', '0', '25/27'], ['0', '0', '1', '-5/9']] pivots=[0, 1, 2]
+FAIL ex14 q=-3 rank2
+   got : 3
+   want: 2
+NOTE ex14 q=-3 t=0 is INCONSISTENT (pivots=[0, 1, 2])
+PASS ex14 q=5 rank3
+PASS ex14 q=0 unique rank3
+NOTE ex14 q=-3 s=0 -> (x,y,z)=(-17/3,5/3,0), t=5
+PASS ex14 c1 s=0
+PASS ex14 c2 s=0
+PASS ex14 c3 s=0
+NOTE ex14 q=-3 s=1 -> (x,y,z)=(-9,3,1), t=6
+PASS ex14 c1 s=1
+PASS ex14 c2 s=1
+PASS ex14 c3 s=1
+NOTE ex14 q=-3 s=-2 -> (x,y,z)=(1,-1,-2), t=3
+PASS ex14 c1 s=-2
+PASS ex14 c2 s=-2
+PASS ex14 c3 s=-2
+NOTE ex14 q=-3 s=5/2 -> (x,y,z)=(-14,5,5/2), t=15/2
+PASS ex14 c1 s=5/2
+PASS ex14 c2 s=5/2
+PASS ex14 c3 s=5/2
+PASS ex14 z=1 -> y
+PASS ex14 z=1 -> x
+PASS ex14 z=1 -> t
+NOTE ex15 d=0 -> R=[['1', '0', '0', '27/22'], ['0', '1', '0', '1/11'], ['0', '0', '1', '-32/11']] pivots=[0, 1, 2]
+NOTE ex15 d=4 -> R=[['1', '0', '0', '15/14'], ['0', '1', '0', '1/7'], ['0', '0', '1', '-20/7']] pivots=[0, 1, 2]
+NOTE ex15 d=10 -> R=[['1', '0', '0', '-3/2'], ['0', '1', '0', '1'], ['0', '0', '1', '-2']] pivots=[0, 1, 2]
+PASS ex15 d=4 step
+PASS ex15 d=4 a22!=0
+PASS ex15 d=10 a22==0
+FAIL ex16 combination
+   got : [['-5'], ['9'], ['17'], ['10']]
+   want: [['13'], ['-30'], ['2'], ['-26']]
+PASS ex17 rank A
+PASS ex17 rank [A|b]
+PASS ex17 solution
+PASS ex18 inverse
+PASS ex18 det
+PASS ex18 rank3
+PASS ex18 det nonzero so invertible
+FAIL ex19 PEA
+   got : [['1', '-2'], ['0', '4'], ['6', '-5']]
+   want: [['1', '-2'], ['0', '4'], ['3', '1']]
+PASS ex19 (PE)^-1
+PASS ex19 (PE)^-1 value
+PASS ex19 round trip
+PASS ex20 AB=I
+PASS ex20 BA=I
+PASS ex21a diag
+PASS ex21b inverse
+PASS ex21c singular
+PASS ex21c rank2
+PASS ex21d inverse
+PASS ex21e lower unit invertible
+PASS ex21f zero row rank
+PASS ex22 U
+PASS ex22 LU
+PASS ex22 det
+PASS ex23 LU
+PASS ex23 x b=[3, 5, 6]
+PASS ex23 residual b=[3, 5, 6]
+FAIL ex23 x b=[4, 5, 6]
+   got : ['3', '0', '1']
+   want: ['-1', '3', '-2']
+PASS ex23 residual b=[4, 5, 6]
+PASS ex24 LDLt
+FAIL ex24b LDLt
+   got : [['1', '2', '2'], ['2', '7', '7'], ['2', '7', '20/3']]
+   want: [['1', '2', '2'], ['2', '7', '7'], ['2', '7', '6']]
+PASS ex24b det
+PASS ex24b rank3
+PASS ex25 P orthogonal
+FAIL ex25 PQ
+   got : [['1', '0', '0'], ['0', '1', '0'], ['0', '0', '1']]
+   want: [['0', '1', '0'], ['0', '0', '1'], ['1', '0', '0']]
+NOTE ex25 check: P25 swaps rows 1,2 of Q25 -> row1=(0,1,0), row2=(0,0,1), row3=(1,0,0)
+PASS ex25 PQ perm
+PASS ex25 (PQ)^-1=(PQ)^T
+PASS ex26 mid
+PASS ex26 U
+PASS ex26 LU=PA
+FAIL ex26b t1
+   got : [['1', '2', '2'], ['3/2', '0', '-1'], ['1', '3', '0']]
+   want: [['1', '2', '2'], ['0', '-3', '-4'], ['1', '3', '0']]
+FAIL ex26b t2
+   got : [['1', '2', '2'], ['3/2', '0', '-1'], ['0', '1', '-2']]
+   want: [['1', '2', '2'], ['0', '-3', '-4'], ['0', '1', '-2']]
+FAIL ex26b U
+   got : [['1', '2', '2'], ['3/2', '0', '-1'], ['1/2', '1', '-7/3']]
+   want: [['1', '2', '2'], ['0', '-3', '-4'], ['0', '0', '-10/3']]
+PASS ex26b LU=PA
+PASS ex26b rank3
+PASS ex27 A^-1
+FAIL ex27 C A^-1 B
+   got : [['23/5', '3'], ['3', '2']]
+   want: [['8', '5'], ['5', '2']]
+FAIL ex27 S
+   got : [['57/5', '6'], ['6', '21']]
+   want: [['8', '4'], ['4', '21']]
+FAIL ex27 S det
+   got : 1017/5
+   want: 152
+FAIL ex27 block reduce
+   got : [['2', '1', '3', '2'], ['1', '3', '1', '1'], ['-1/5', '-8/5', '57/5', '29/5'], ['7/5', '1/5', '41/5', '112/5']]
+   want: [['2', '1', '3', '2'], ['1', '3', '1', '1'], ['0', '0', '8', '4'], ['0', '0', '4', '21']]
+FAIL ex27 -CA^-1
+   got : [['-7/5', '-2/5'], ['-1/5', '-1/5']]
+   want: [['-7/5', '-1/5'], ['-6/5', '-3/5']]
+NOTE ex28 RREF = [['0', '1', '0'], ['0', '0', '1'], ['0', '0', '0'], ['0', '0', '0']] pivots=[1, 2]
+PASS ex28 rank
+PASS ex28 pivots
+PASS ex28 basis
+PASS ex28 dim
+NOTE ex29 RREF = [['1', '0', '1'], ['0', '1', '1'], ['0', '0', '0'], ['0', '0', '0']] pivots=[0, 1]
+PASS ex29 rank
+PASS ex29 pivots
+PASS ex29 R
+PASS ex29 c3=c1+c2
+NOTE ex30 lambda=0 rank=3
+NOTE ex30 lambda=2 rank=3
+NOTE ex30 lambda=1 rank=3
+NOTE ex30 lambda=7 rank=3
+NOTE ex30 lambda=-3 rank=3
+FAIL ex30 lambda=1 rank2
+   got : 3
+   want: 2
+FAIL ex30 lambda=1 rows depend
+   got : ['-10', '-5', '1']
+   want: ['0', '0', '0']
+PASS ex30 lambda=1 col depend
+PASS ex30 lambda=0 rank3
+PASS ex30 lambda=2 rank3
+PASS ex30 lambda=-3 rank3
+PASS ex30 2x2 minor nonzero
+PASS ex31 uvT
+PASS ex31b uvT
+PASS ex31b rank
+PASS ex32 AB
+PASS ex32 col1
+PASS ex32 col2
+PASS ex33 I3-AB rank
+PASS ex33 I2-BA rank
+FAIL ex33 MAB
+   got : [['0', '-2', '-3'], ['-3', '-3', '-7'], ['-5', '-6', '-10']]
+   want: [['0', '-2', '-1'], ['-3', '-4', '-3'], ['-5', '-6', '-5']]
+FAIL ex33 MBA
+   got : [['-5', '-8'], ['-8', '-9']]
+   want: [['-5', '-6'], ['2', '3']]
+FAIL ex33 det MBA
+   got : -19
+   want: -11
+FAIL ex33 I2-BA inverse
+   got : [['4/11', '-10/11'], ['14/11', '3/11']]
+   want: [['1', '0'], ['0', '1']]
+FAIL ex33 identity
+   got : [['32/11', '-26/11', '-5/11'], ['35/11', '-51/11', '-27/11'], ['49/11', '-98/11', '-38/11']]
+   want: [['1', '0', '0'], ['0', '1', '0'], ['0', '0', '1']]
+PASS ex34 (AB)^T
+PASS ex34 (A^T)^-1=(A^-1)^T
+PASS ex34 sym of C^-1
+PASS ex34 AtA sym
+PASS ex34 AtA
+PASS ex35a A^2-B^2 sym
+PASS ex35b (A+B)(A-B)
+PASS ex35b not symmetric
+PASS ex35b counterexample AB-BA
+PASS ex35c ABA sym
+PASS ex35d ABAB not symmetric
+NOTE ex35d ABAB = [['7', '4'], ['12', '7']]
+PASS ex36 A^2
+PASS ex36 A^2=3A-2I
+PASS ex36 C
+PASS ex36 D
+PASS ex36 C+D=I
+PASS ex36 n=0
+PASS ex36 n=1
+PASS ex36 n=2
+PASS ex36 n=4
+PASS ex36 n=10
+PASS ex37 a
+PASS ex37 a residual
+PASS ex37 b residual
+PASS ex38 rank
+PASS ex38 V rank
+PASS ex38 dim D
+PASS ex38 block symmetric(shape)
+NOTE ex38 det [O A;A O] = (-1)^n det(A)^2 ; for [[0,1],[1,0]] blocks check below
+PASS ex38 det -A^2
+PASS ex38 detA
+PASS ex38 detA^2
+
+===== SUMMARY =====
+FAILURES: ex1 det nonzero, ex6 R6, ex6 col3 = 1a1+1a2, ex6 col4 = 1a1+1a2+1a3, ex6 N(A) basis, ex6 consistency screen, ex6 b=(1,2,3,4) inconsistent, ex6 general t=1 b=[0, 0, 0, 0], ex6 general t=-3 b=[0, 0, 0, 0], ex6 general t=5/2 b=[0, 0, 0, 0], ex6 particular b=[1, 1, 2, -1], ex6 general t=0 b=[1, 1, 2, -1], ex6 general t=1 b=[1, 1, 2, -1], ex6 general t=-3 b=[1, 1, 2, -1], ex6 general t=5/2 b=[1, 1, 2, -1], ex6 particular b=[-8, 1, -7, 1], ex6 general t=0 b=[-8, 1, -7, 1], ex6 general t=1 b=[-8, 1, -7, 1], ex6 general t=-3 b=[-8, 1, -7, 1], ex6 general t=5/2 b=[-8, 1, -7, 1], ex8 I2-AB inverse, ex8 identity, ex8 BA inverse identity, ex14 q=-3 rank2, ex16 combination, ex19 PEA, ex23 x b=[4, 5, 6], ex24b LDLt, ex25 PQ, ex26b t1, ex26b t2, ex26b U, ex27 C A^-1 B, ex27 S, ex27 S det, ex27 block reduce, ex27 -CA^-1, ex30 lambda=1 rank2, ex30 lambda=1 rows depend, ex33 MAB, ex33 MBA, ex33 det MBA, ex33 I2-BA inverse, ex33 identity
+total FAIL count: 44
